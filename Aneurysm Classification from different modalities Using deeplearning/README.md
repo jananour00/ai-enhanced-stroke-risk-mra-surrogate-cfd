@@ -120,11 +120,44 @@ jupyter notebook notebooks/MRA_VIT_training.ipynb
 
 ![Train Test Comparison](Plots/Train_test_comparison.png)
 
-### Key Metrics
-- **Accuracy**: [Insert final accuracy]
-- **F1-Score**: [Insert F1-score]
-- **AUC-ROC**: [Insert AUC value]
-- **Precision/Recall**: Balanced for medical application
+### Detailed Performance Analysis
+
+#### Training/Validation Set (TRAN SET)
+- **AUC**: 0.998 (near-perfect performance)
+- **Confusion Matrix**:
+  - True Negatives (TN): 1176
+  - True Positives (TP): 2935
+  - False Negatives (FN): 40
+  - False Positives (FP): 334
+
+#### Final Test Set
+- **AUC Score**: 0.9132
+- **Accuracy**: 0.8484
+- **F1 Score**: 0.8942
+- **Sensitivity (Recall)**: 89.3%
+- **Specificity**: 73.5%
+- **Confusion Matrix**:
+  - True Positives (TP): 334
+  - False Negatives (FN): 40
+  - False Positives (FP): 39
+  - True Negatives (TN): 108
+
+#### Performance Comparison
+
+| Metric          | TRAN SET | FINAL TEST SET |
+|-----------------|----------|----------------|
+| AUC            | 0.998    | 0.9132         |
+| True Positives | 2935     | 334            |
+| False Negatives| 40       | 40             |
+| False Positives| 334      | 39             |
+| True Negatives | 1176     | 108            |
+
+#### Key Takeaways
+- The model demonstrates **high sensitivity** (89.3% recall), effectively detecting positive cases
+- **Specificity is moderate** (73.5%), indicating some false positives in negative case identification
+- There's a **performance gap** between training (AUC: 0.998) and test sets (AUC: 0.9132), suggesting potential overfitting
+- The **F1 score of 0.8942** shows good balance between precision and recall for medical applications
+- Overall strong performance suitable for clinical screening, though specificity could be improved for definitive diagnosis
 
 ## 🔍 Predictions
 
